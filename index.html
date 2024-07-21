@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Enriqco</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        Alessandro Enriqco Website
+    </header>
+    <nav class="menu-bar">
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="game.html">GAME</a>
+        </div>
+    </nav>
+    <div class="main-container">
+        <aside class="sidebar left">
+            <h2>Useful Links</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com" target="_blank">W3 Schools For Coding</a></li>
+                <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow Helps Find Other People's Code</a></li>
+                <li><a href="https://www.khanacademy.org">Khan Academy for Mathematics and Other Subjects</a></li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <section id="home" class="content-center">
+                <h2>About Me</h2>
+                <img src="Homepage.JPG" alt="About Me" class="responsive-image">
+                <p>
+                    My name is Alessandro Enriqco Putra Bayu Wedha, I come from Jakarta, Indonesia and 
+                    I am currently doing my bachelors in Ritsumeikan. I come from a Catholic family and I amcurrently 
+                    looking for a church to attend in Osaka. My first language is Indonesian but I have no issues switching
+                    between English and Indonesian since I have been learning how to speak English from birth. At the moment,
+                    I am unable to speak Japanese however I am planning to study Japanese over the summer break.
+                    I am 19 years old and I am currently living in the Ritsumeikan I House.
+                    The reason I chose to live in the I-House was because I wanted to make a lot of friends of different backgrounds 
+                    and histories. Ritsumeikan was a school that my high school in Indonesia was affiliated with, however, 
+                    no students in the history of my school have ever entered Ritsumeikan, so I am the first.
+                    My hobbies include football (or soccer), driving, and trying to learn about data. 
+                    Currently, I have a decent understanding of machine learning models, working on simple linear regressions using
+                    supervised and unsupervised learning. Thank you for visiting my website and I hope for visitors to learn a bit 
+                    about me.
+                </p>
+            </section>
+        </div>
+        <aside class="sidebar right">
+            <h2>Contact Me</h2>
+            <form onsubmit="handleSubmit(event)">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+            </form>
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.instagram.com/enriqco24/?hl=en" target="_blank">Instagram</a> |
+            <a href="https://github.com/EnriqcoWedha" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+            alert('Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message);
+            
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }
+    </script>
+</body>
+</html>

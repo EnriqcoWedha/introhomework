@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        Alessandro Enriqco Website
+    </header>
+    <nav class="menu-bar">
+        <div class="nav-links">
+            <a href="MainPage.html">HOME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="game.html">GAME</a>
+        </div>
+    </nav>
+    <div class="main-container">
+        <div class="main-content">
+            <h2>Welcome to the Quiz Game</h2>
+            <form id="quizForm" onsubmit="handleQuizSubmit(event)">
+                <label for="username">Enter your name:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <div class="question">
+                    <p>1. What is my age?</p>
+                    <input type="radio" id="q1a" name="q1" value="0" required>
+                    <label for="q1a">19</label><br>
+                    <input type="radio" id="q1b" name="q1" value="0">
+                    <label for="q1b">16</label><br>
+                    <input type="radio" id="q1c" name="q1" value="20">
+                    <label for="q1c">21</label><br>
+                    <input type="radio" id="q1d" name="q1" value="0">
+                    <label for="q1d">22</label><br>
+                </div>
+
+                <div class="question">
+                    <p>2. What was the club that I founded in high school?</p>
+                    <input type="radio" id="q2a" name="q2" value="20" required>
+                    <label for="q2a">Movie Club</label><br>
+                    <input type="radio" id="q2b" name="q2" value="0">
+                    <label for="q2b">Football Club</label><br>
+                    <input type="radio" id="q2c" name="q2" value="0">
+                    <label for="q2c">Coding Club</label><br>
+                    <input type="radio" id="q2d" name="q2" value="0">
+                    <label for="q2d">Swimming Club</label><br>
+                </div>
+
+                <div class="question">
+                    <p>3. What is my religion?</p>
+                    <input type="radio" id="q3a" name="q3" value="0" required>
+                    <label for="q3a">Muslim</label><br>
+                    <input type="radio" id="q3b" name="q3" value="0">
+                    <label for="q3b">Catholic</label><br>
+                    <input type="radio" id="q3c" name="q3" value="20">
+                    <label for="q3c">Hindu</label><br>
+                    <input type="radio" id="q3d" name="q3" value="0">
+                    <label for="q3d">Jehovah's Witness</label><br>
+                </div>
+
+                <div class="question">
+                    <p>4. What is my hobby?</p>
+                    <input type="radio" id="q4a" name="q4" value="0" required>
+                    <label for="q4a">Football</label><br>
+                    <input type="radio" id="q4b" name="q4" value="0">
+                    <label for="q4b">Ski Hockey</label><br>
+                    <input type="radio" id="q4c" name="q4" value="0">
+                    <label for="q4c">Billiards</label><br>
+                    <input type="radio" id="q4d" name="q4" value="20">
+                    <label for="q4d">Jump Rope</label><br>
+                </div>
+
+                <div class="question">
+                    <p>5. What is my main focus in ISSE?</p>
+                    <input type="radio" id="q5a" name="q5" value="20" required>
+                    <label for="q5a">Data Science</label><br>
+                    <input type="radio" id="q5b" name="q5" value="0">
+                    <label for="q5b">AR/VR</label><br>
+                    <input type="radio" id="q5c" name="q5" value="0">
+                    <label for="q5c">Robotics</label><br>
+                    <input type="radio" id="q5d" name="q5" value="0">
+                    <label for="q5d">Affective Engineering</label><br>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://github.com/EnriqcoWedha" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        function handleQuizSubmit(event) {
+            event.preventDefault();
+            
+            var score = 0;
+            var form = document.getElementById('quizForm');
+            var username = form.elements['username'].value;
+
+            for (var i = 1; i <= 5; i++) {
+                var question = form.elements['q' + i];
+                for (var j = 0; j < question.length; j++) {
+                    if (question[j].checked) {
+                        score += parseInt(question[j].value);
+                    }
+                }
+            }
+
+            alert('Hello, ' + username + '! Your score is ' + score + 'Congratulations and Thank You for Your Participation!');
+        }
+    </script>
+</body>
+</html>
